@@ -35,23 +35,21 @@ header {
     cursor: default;
 }
 
-/* Le cercle avec les initiales MP */
-.profile-badge {
+/* --- La photo de profil circulaire --- */
+.profile-pic {
     width: 45px;
     height: 45px;
-    border-radius: 50%;
-    background-color: #7B68EE; /* Violet/Bleu */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.2rem;
+    border-radius: 50%; /* C'est ça qui rend l'image parfaitement ronde */
+    object-fit: cover;  /* C'est ça qui recadre l'image sans l'écraser */
     box-shadow: 0 0 10px rgba(123, 104, 238, 0.4);
     border: 2px solid transparent;
     transition: all 0.3s ease;
 }
 
+.profile-section:hover .profile-pic {
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.8);
+    border-color: #7B68EE; /* Ajoute un petit contour violet au survol */
+}
 .profile-name {
     color: white;
     font-weight: 600;
