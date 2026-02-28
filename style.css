@@ -1,5 +1,4 @@
-/* Importation d'une police moderne */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
@@ -8,43 +7,119 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* --- MODE SOMBRE GLOBAL --- */
 body {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #050505; /* Fond noir profond */
+    color: #e2e8f0; /* Texte gris clair */
 }
 
-/* Barre de navigation */
+/* --- LE HEADER --- */
 header {
-    background-color: #1a252f;
-    padding: 15px 0;
+    background-color: #0b0c10;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* --- PROFIL (GAUCHE) --- */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    cursor: default;
+}
+
+/* Le cercle avec les initiales MP */
+.profile-badge {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #7B68EE; /* Violet/Bleu */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(123, 104, 238, 0.4);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.profile-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.profile-section:hover .profile-badge {
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.8);
+}
+
+/* --- BULLE D'INFO AU SURVOL --- */
+.profile-tooltip {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    margin-top: 15px;
+    background-color: #1a1b26;
+    color: #cbd5e1;
+    padding: 15px;
+    border-radius: 12px;
+    width: max-content;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Animation gérée ici */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1001;
+}
+
+.profile-tooltip p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+/* Fait apparaître la bulle quand la souris est sur la zone profil */
+.profile-section:hover .profile-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- MENU DE NAVIGATION (DROITE) --- */
 nav {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    gap: 15px;
 }
 
 nav a {
-    color: white;
+    background-color: transparent;
+    color: #a0aec0;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover, nav a.active {
-    background-color: #3498db;
-    transform: translateY(-2px);
+    background-color: #7B68EE;
+    box-shadow: 0 0 15px rgba(123, 104, 238, 0.5);
+    color: white;
 }
 
-/* Conteneur principal */
+/* --- CONTENU DES PAGES (Cartes et textes) --- */
 .container {
     max-width: 1000px;
     margin: 50px auto;
@@ -52,71 +127,46 @@ nav a:hover, nav a.active {
     animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Titres */
-h1 {
-    font-size: 2.5rem;
-    color: #1a252f;
-    margin-bottom: 10px;
-    text-align: center;
-}
+h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; text-align: center; }
+h2 { color: #7B68EE; margin-bottom: 30px; text-align: center; font-size: 2rem; }
+p.subtitle { text-align: center; font-size: 1.2rem; color: #a0aec0; margin-bottom: 40px; }
 
-h2 {
-    color: #3498db;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-p.subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 40px;
-}
-
-/* Grille pour les cartes (compétences, expériences...) */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-/* Style des cartes */
 .card {
-    background: white;
+    background: #111217;
     padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid #3498db;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-top: 4px solid #7B68EE;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(123, 104, 238, 0.2);
 }
 
-.card h3 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
+.card h3 { margin-bottom: 15px; color: #fff; }
 
-/* Tags pour les technos */
-.tags {
-    margin-top: 15px;
-}
-
+.tags { margin-top: 15px; }
 .tag {
     display: inline-block;
-    background: #ecf0f1;
-    color: #2c3e50;
+    background: rgba(123, 104, 238, 0.2);
+    color: #7B68EE;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
     margin: 5px 5px 0 0;
     font-weight: 600;
+    border: 1px solid rgba(123, 104, 238, 0.3);
 }
 
-/* Animation d'apparition */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
