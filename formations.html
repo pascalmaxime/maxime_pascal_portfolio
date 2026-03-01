@@ -5,6 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formations - Maxime PASCAL</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Styles du thème sombre & violet (cohérence avec les autres pages) --- */
+        body {
+            background-color: #0b0b0e;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        /* Affichage vertical pour les formations */
+        .grid {
+            display: flex;
+            flex-direction: column; /* Aligne les cartes de haut en bas */
+            gap: 30px; /* Espace entre chaque formation */
+            align-items: center;
+        }
+
+        /* Style des blocs (Cards) */
+        .card {
+            background-color: #121214;
+            border: 1px solid #7b61ff; /* Bordure violette */
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px); /* Léger effet de soulèvement au survol */
+        }
+
+        .card h3 {
+            color: #ffffff;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .card .school {
+            font-weight: bold;
+            color: #7b61ff; /* Accent violet sur le nom de l'école */
+            font-size: 1.1em;
+        }
+
+        .card .date {
+            color: #a0aec0;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Style de la zone de description */
+        .card-content {
+            border-top: 1px solid rgba(123, 97, 255, 0.2); /* Ligne de séparation subtile */
+            padding-top: 20px;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .card-content strong {
+            color: #ffffff;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
 
@@ -34,23 +116,25 @@
         <div class="grid">
             
             <div class="card">
-                <h3>Baccalauréat Général</h3>
-                <p><strong>Lycée Saint-Pierre</strong></p>
-                <p style="color: #a0aec0; font-style: italic; margin-top: 10px; margin-bottom: 15px;">Obtenu en 2024</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
+                <h3>Bachelor Informatique & Cybersécurité</h3>
+                <p class="school">Formatik | Bac+3 (Titre RNCP AIS)</p>
+                <p class="date">À venir (2026 - 2027)</p>
+                
+                <div class="card-content">
+                    <p>
                         <strong>Description de la formation :</strong><br>
-                        Diplôme national marquant la fin des études générales. Il a permis d'acquérir une base en mathématiques et on informatique car c'étaient mes 2 spécialités en terminale, mais aussi D'autres matières utiles pour la poursuite de mes études.
+                        Le titre d'Administrateur d'Infrastructures Sécurisées (AIS) est une certification de niveau 6 (Bac+3). Il prépare à mettre en œuvre, administrer et sécuriser les infrastructures informatiques locales et cloud. La formation met fortement l'accent sur la cybersécurité, incluant la prévention, l'analyse des menaces et le traitement des incidents de sécurité.
                     </p>
                 </div>
             </div>
 
             <div class="card">
                 <h3>BTS CIEL</h3>
-                <p><strong>IRUP</strong> | Cybersécurité, Informatique et Réseaux</p>
-                <p style="color: #a0aec0; font-style: italic; margin-top: 10px; margin-bottom: 15px;">2024 - 2026</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
+                <p class="school">IRUP | Cybersécurité, Informatique et Réseaux</p>
+                <p class="date">2024 - 2026</p>
+                
+                <div class="card-content">
+                    <p>
                         <strong>Description de la formation :</strong><br>
                         Le BTS Cybersécurité, Informatique et réseaux, Électronique forme des techniciens supérieurs. L'option Informatique et Réseaux est tournée vers l'administration des réseaux, la cybersécurité, le cloud et la programmation. Le programme permet d'apprendre à installer, exploiter et maintenir des réseaux informatiques sécurisés, tout en valorisant les données.
                     </p>
@@ -58,18 +142,18 @@
             </div>
 
             <div class="card">
-                <h3>Bachelor Informatique & Cybersécurité</h3>
-                <p><strong>Formatik</strong> | Bac+3 (Titre RNCP AIS)</p>
-                <p style="color: #a0aec0; font-style: italic; margin-top: 10px; margin-bottom: 15px;">À venir (2026 - 2027)</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
-                        <strong>Description de la formation :</strong><br>
-                        Le titre d'Administrateur d'Infrastructures Sécurisées (AIS) est une certification de niveau 6 (Bac+3). Il prépare à mettre en œuvre, administrer et sécuriser les infrastructures informatiques locales et cloud. La formation met fortement l'accent sur la cybersécurité, incluant la prévention, l'analyse des menaces et le traitement des incidents de sécurité.
+                <h3>Baccalauréat Général</h3>
+                <p class="school">Lycée Saint-Pierre</p>
+                <p class="date">Obtenu en 2024</p>
+                
+                <div class="card-content">
+                    <p>
                     </p>
                 </div>
             </div>
 
         </div>
+    </div>
 
 </body>
 </html>

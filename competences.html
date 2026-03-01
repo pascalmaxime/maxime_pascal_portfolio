@@ -5,6 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compétences - Maxime PASCAL</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Styles basés sur la photo fournie (Thème sombre & Violet) --- */
+        
+        /* Force le fond sombre pour correspondre à l'image si ce n'est pas déjà dans style.css */
+        body {
+            background-color: #0b0b0e; /* Fond noir/gris très foncé */
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espace entre les grands blocs */
+            align-items: center;
+        }
+
+        /* Style des blocs (Cards) inspiré de votre image */
+        .card {
+            background-color: #121214; /* Fond légèrement plus clair que le body */
+            border: 1px solid #7b61ff; /* Bordure violette comme sur la photo */
+            border-radius: 12px; /* Bords arrondis */
+            padding: 30px;
+            width: 100%;
+            text-align: center; /* Centre le texte principal */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            color: #ffffff;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #d1d1d1; /* Texte gris clair pour une bonne lisibilité */
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* --- Disposition des briques de compétences (Tags) --- */
+        .tags {
+            display: flex;
+            flex-direction: column; /* Aligne les briques à la verticale */
+            align-items: center; /* Centre les briques horizontalement */
+            gap: 15px; /* Espacement entre chaque brique pour la lisibilité */
+        }
+
+        .tag {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; 
+            max-width: 350px; /* Largeur max pour que ça ressemble à un joli bouton */
+            padding: 15px 20px;
+            background-color: #1a1a24; /* Fond sombre avec une très légère teinte violette */
+            border: 1px solid #7b61ff; /* Bordure violette */
+            border-radius: 8px; /* Bords arrondis comme sur la photo */
+            color: #ffffff;
+            text-align: center; /* Centre le texte dans la brique */
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: all 0.3s ease; /* Animation fluide au survol */
+        }
+
+        /* Effet esthétique au survol de la souris */
+        .tag:hover {
+            background-color: #7b61ff; /* Devient violet plein au survol */
+            color: #ffffff;
+            cursor: default;
+        }
+    </style>
 </head>
 <body>
 
@@ -34,18 +116,26 @@
         <div class="grid">
             <div class="card">
                 <h3>Systèmes & Réseaux</h3>
-                <p>Administration de serveurs, gestion d'incidents, analyse de performances réseau.</p>
+                <p>Installation, administration et maintien de serveurs et services. Je sais mettre en place de nombreux rôles (ex : serveur web IIS, serveur de fichiers, DHCP, etc.) ainsi que déployer et gérer des machines virtuelles (VM) via des hyperviseurs comme Hyper-V et VMware ESXi.</p>
                 <div class="tags">
                     <span class="tag">Windows Server</span>
+                    <span class="tag">AD / DNS / DHCP / NPS</span>
+                    <span class="tag">Microsoft SQL</span>
+                    <span class="tag">Serveur de fichiers</span>
                     <span class="tag">Linux</span>
+                    <span class="tag">phpMyAdmin</span>
+                    <span class="tag">Hyper-V</span>
+                    <span class="tag">ESXi</span>
                 </div>
             </div>
 
             <div class="card">
                 <h3>Support IT</h3>
-                <p>Support utilisateur, prise en main à distance, dépannage poste de travail, création de procédures.</p>
+                <p>Assistance aux utilisateurs (sur site et prise en main à distance), diagnostic et résolution des incidents matériels, logiciels et réseau, dépannage poste de travail, création de procédures.</p>
                 <div class="tags">
+                    <span class="tag">AnyDesk / TeamViewer</span>
                     <span class="tag">GLPI</span>
+                    <span class="tag">OCS</span>
                     <span class="tag">ERP</span>
                 </div>
             </div>
@@ -58,7 +148,7 @@
                     <span class="tag">PowerShell</span>
                     <span class="tag">C/C++</span>
                     <span class="tag">SQL</span>
-                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">HTML/CSS/PHP</span>
                 </div>
             </div>
         </div>

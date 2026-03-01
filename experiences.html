@@ -5,6 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expériences - Maxime PASCAL</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Styles du thème sombre & violet (cohérence avec la page Compétences) --- */
+        body {
+            background-color: #0b0b0e;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Affichage vertical pour les expériences */
+        .grid {
+            display: flex;
+            flex-direction: column; /* Aligne les cartes de haut en bas */
+            gap: 30px; /* Espace entre chaque expérience */
+            align-items: center;
+        }
+
+        /* Style des blocs (Cards) */
+        .card {
+            background-color: #121214;
+            border: 1px solid #7b61ff; /* Bordure violette */
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: left; /* Aligné à gauche pour faciliter la lecture des listes */
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px); /* Léger effet de soulèvement au survol */
+        }
+
+        .card h3 {
+            color: #ffffff;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card .company {
+            font-weight: bold;
+            color: #7b61ff; /* Accent violet sur le nom de l'entreprise */
+            font-size: 1.1em;
+        }
+
+        .card .date-location {
+            color: #a0aec0;
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Style des listes de tâches */
+        .card-content {
+            border-top: 1px solid rgba(123, 97, 255, 0.2); /* Ligne de séparation subtile */
+            padding-top: 20px;
+        }
+
+        .card-content h4 {
+            color: #e2e8f0;
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            text-decoration-color: #7b61ff;
+        }
+
+        .card-content ul {
+            margin-left: 20px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            list-style-type: square;
+        }
+
+        .card-content li {
+            margin-bottom: 8px;
+        }
+
+        .card-content strong {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 
@@ -31,45 +126,57 @@
     <div class="container">
         <h2>Mon Expérience Professionnelle</h2>
         
-<div class="grid">
+        <div class="grid">
             
             <div class="card">
-                <h3>Stagiaire Support & Admin SI</h3>
-                <p><strong>Desjoyaux</strong> | La Fouillouse</p>
-                <p style="color: #a0aec0; font-style: italic; margin-top: 10px; margin-bottom: 15px;">Mars 2023 (2 semaines)</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <ul style="margin-left: 20px; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
-                        <li>Création et mise en forme de tableaux comparatifs sous Excel pour assister au choix technique des futurs équipements.</li>
-                        <li>Prise de notes techniques et rédaction de synthèses d'activité documentant les processus informatiques observés.</li>
+                <h3>Alternant en Support SI & Administrateur Systèmes</h3>
+                <p class="company">Vie & Véranda | Feyzin</p>
+                <p class="date-location">Contrat en alternance • 09/2024 - 07/2026</p>
+                
+                <div class="card-content">
+                    <h4>Support & Maintien en Conditions Opérationnelles</h4>
+                    <ul>
+                        <li><strong>Support N1/N2 :</strong> Prise en charge des tickets utilisateurs (sur site et via outils de prise en main à distance). Diagnostic et résolution technique des incidents allant du poste de travail aux problématiques réseaux et logicielles.</li>
+                        <li><strong>Administration Systèmes :</strong> Maintien en conditions opérationnelles (MCO) des serveurs sous Windows Server et Linux. Gestion courante de l'environnement Microsoft 365 (via M365 Admin Center).</li>
+                        <li><strong>Administration ERP : </strong> Création des accès et des autorisations.</li>
+                        <li><strong>Documentation IT :</strong> Rédaction et mise à jour constante du référentiel technique : guides d'utilisation de l'ERP, tutoriels GLPI, et standardisation des procédures d'onboarding/offboarding des collaborateurs.</li>
+                    </ul>
+
+                    <h4>Projets d'Infrastructure</h4>
+                    <ul>
+                        <li><strong>Ticketing & Parc Informatique :</strong> Déploiement et paramétrage du système de ticketing GLPI, couplé à OCS Inventory pour automatiser la remontée matérielle et optimiser la gestion du parc.</li>
+                        <li><strong>Gestion des accès :</strong> Intégration et administration des comptes utilisateurs via l'annuaire LDAP pour sécuriser et centraliser l'accès aux équipements d'impression (MFP).</li>
+                        
+                        <li><strong>Supervision :</strong> Installation et configuration de sondes de température dans la salle serveur afin de monitorer l'environnement et prévenir les incidents matériels liés à la surchauffe.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="card">
                 <h3>Employé Polyvalent</h3>
-                <p><strong>E.Leclerc</strong> | Andrézieux-Bouthéon</p>
-                <p style="color: #a0aec0; font-style: italic; margin-top: 10px; margin-bottom: 15px;">Août 2024 - Sept. 2024 (1 mois)</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <ul style="margin-left: 20px; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
-                        <li>Accueil client, gestion des encaissements et maintien de l'organisation des rayons (Expérience de contact client et de rigueur).</li>
+                <p class="company">E.Leclerc | Andrézieux-Bouthéon</p>
+                <p class="date-location">CDD • 08/2024 - 09/2024</p>
+                
+                <div class="card-content">
+                    <ul>
+                        <li>Accueil client, gestion des encaissements et maintien de l'organisation des rayons (Expérience de contact client et de rigueur).</li>   
                     </ul>
                 </div>
             </div>
 
             <div class="card">
-                <h3 style="font-size: 1.2rem;">Alternant Support SI & Admin Systèmes</h3>
-                <p><strong>Vie & Véranda</strong> | Feyzin</p>
-                <p style="color: #a0aec0; font-style: italic; margin-top: 10px; margin-bottom: 15px;">09/2024 - 07/2026</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <ul style="margin-left: 20px; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
-                        <li><strong>Support N1/N2 :</strong> Assistance utilisateurs, diagnostic et résolution d'incidents (matériels, logiciels, réseaux)[cite: 42, 43].</li>
-                        <li><strong>Administration :</strong> Gestion des environnements serveurs (Windows/Linux) et tenants Microsoft 365[cite: 44].</li>
-                        <li><strong>Projets :</strong> Déploiement GLPI (ticketing), OCS Inventory, gestion LDAP et sondes de supervision[cite: 48, 49, 50].</li>
-                        <li><strong>Documentation :</strong> Création d'un référentiel technique complet.</li>
-                    </ul>
+                <h3>Stagiaire en Support & Administrateur SI</h3>
+                <p class="company">Desjoyaux | La Fouillouse</p>
+                <p class="date-location">Stage • Mars 2023</p>
+                
+                <div class="card-content">
+                    <ul>
+                        <li>Prise de notes et création et mise en forme de tableaux comparatifs sous Excel pour assister l'équipe informatique dans le choix technique des futurs équipements.</li>
                 </div>
             </div>
 
         </div>
+    </div>
+
 </body>
 </html>
