@@ -133,17 +133,8 @@ p.subtitle { text-align: center; font-size: 1.2rem; color: #a0aec0; margin-botto
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    position: relative;
 }
 
-/* 🌟 L'astuce magique : masque les autres cartes quand l'une d'elles est survolée */
-.grid:has(.card:hover) .card:not(:hover) {
-    opacity: 0; /* Rend les autres cartes transparentes */
-    transform: scale(0.9); /* Les réduit légèrement pendant qu'elles disparaissent */
-    pointer-events: none; /* Empêche de les survoler par erreur pendant l'animation */
-}
-
-/* --- LES CARTES --- */
 .card {
     background: #111217;
     padding: 25px;
@@ -151,26 +142,14 @@ p.subtitle { text-align: center; font-size: 1.2rem; color: #a0aec0; margin-botto
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.05);
     border-top: 4px solid #7B68EE;
-    position: relative;
-    z-index: 1;
-    
-    /* On applique la transition sur tout (zoom, opacité, ombre) pour que ce soit fluide */
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    /* 🔍 C'est ici qu'on gère le gros zoom (1.3 = +30%) */
-    transform: scale(1.3); 
-    box-shadow: 0 30px 60px rgba(123, 104, 238, 0.5);
-    z-index: 100; /* Fait passer la carte par-dessus les autres */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(123, 104, 238, 0.2);
 }
-.card-img {
-    width: 100%; /* L'image prend toute la largeur de la carte */
-    height: 150px; /* Tu peux ajuster cette hauteur */
-    object-fit: cover; /* Coupe l'image proprement si elle ne rentre pas */
-    border-radius: 8px; /* Bords légèrement arrondis */
-    margin-bottom: 15px; /* Espace avec le titre en dessous */
-}
+
 .card h3 { margin-bottom: 15px; color: #fff; }
 
 .tags { margin-top: 15px; }
